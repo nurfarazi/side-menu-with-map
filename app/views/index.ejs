@@ -10,6 +10,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Raleway|Hind' rel='stylesheet' type='text/css'>
 
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.1/mapbox-gl.css' rel='stylesheet' />
+
     <script src="/js/main.js">
     </script>
     <link href="/css/main.css" rel="stylesheet" type="text/css">
@@ -34,91 +38,26 @@
             
             #map {
                 height: 100%;
+                width: 100%;
             }
         </style>
     </head>
 
     <body>
-        <!--        <div id="map"></div>-->
-        <div id="site-wrapper">
-
-            <div id="site-canvas">
-
-                <div id="site-menu">
 
 
-                    <p class="lead">Put any HTML you want here.</p>
-                    <p>Style it however you want.</p>
-
-                    <ul>
-                        <li>Free to scroll up and down</li>
-                        <li>But not left and write</li>
-                    </ul>
-                    <p>Here</p>
-
-
-
-                </div>
-
-                <h1 class="text-center">Off Canvas Menu Demos</h1>
-
-
-
-
-                <br>
-
-
-                <div id="hearts">
-
-                    <h3>Default Transitions</h3>
-                    <a href="#" data-transition="ease"><i class="fa fa-heart"></i><span>Ease</span></a>
-                    <a href="#" data-transition="linear"><i class="fa fa-heart"></i><span>Linear</span></a>
-                    <a href="#" data-transition="ease-in"><i class="fa fa-heart"></i><span>Ease-in</span></a>
-                    <a href="#" data-transition="ease-out"><i class="fa fa-heart"></i><span>Ease-out</span></a>
-                    <a href="#" data-transition="ease-in-out"><i class="fa fa-heart"></i><span>Ease-in-out</span></a>
-
-                    <br>
-
-                    <h3>Cubic Transitions</h3>
-                    <a href="#" data-transition="bounce"><i class="fa fa-heart"></i><span>Bounce</span></a>
-                    <a href="#" data-transition="snappy"><i class="fa fa-heart"></i><span>Snappy</span></a>
-                    <a href="#" data-transition="out-of-orbit"><i class="fa fa-heart"></i><span>Out of Orbit</span></a>
-                    <a href="#" data-transition="fat-kid-down-slide"><i class="fa fa-heart"></i><span>Fat kid down slide</span></a>
-
-                    <br>
-
-                    <h3>Misc</h3>
-                    <a href="#" data-transition="none"><i class="fa fa-heart"></i><span>None</span></a>
-                    <a href="#" data-transition="boring"><i class="fa fa-heart"></i><span>Boring</span></a>
-                    <a href="#" data-transition="extra-pop"><i class="fa fa-heart"></i><span>Extra Pop</span></a>
-
-                </div>
-
-
-
-
-
-
-            </div>
-
-        </div>
-
-
-
+        <div id='map'></div>
         <script>
-            var map;
-
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: {
-                        lat: -34.397,
-                        lng: 150.644
-                    },
-                    zoom: 8
-                });
-            }
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZGV2bSIsImEiOiJjaWljeHB3dHYwMG5udWRrcm96ZWJiOG1zIn0.0bqz5qDE3ngLGCAx7zTLfQ';
+            var map = new mapboxgl.Map({
+                container: 'map', // container id
+                style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+                center: [-74.50, 40], // starting position
+                zoom: 9 // starting zoom
+            });
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+
+
 
     </body>
 

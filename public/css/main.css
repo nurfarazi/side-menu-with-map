@@ -33,8 +33,10 @@
     position: absolute;
     top: 0;
     left: -300px;
-    background: #428bca;
+    background: #000;
     padding: 15px;
+    -webkit-filter: blur(50px);
+    opacity: 0.5;
 }
 
 .ease {
